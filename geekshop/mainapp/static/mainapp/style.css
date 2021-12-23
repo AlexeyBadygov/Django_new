@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	width: 1366px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+.footer {
+	height: 384px;
+	width: 1169px;
+	background-color: #f7f7f7;
+	padding-left: 99px;
+	padding-right: 98px;
+	margin: -384px auto 0;
+	clear: both;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.footer .small {
+	text-transform: uppercase;
+	float: left;
+	color:  #6c6c6c;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 26px;
+	text-align: left;
+	margin-top: 35px;
+}
+
+.social {
+	height: 28px;
+	width: 121px;
+	float: left;
+	margin-left: 158px;
+	margin-top: 30px;
+}
+.social1{
+	background: url(img/social-links.png);
+	height: 28px;
+	width: 28px;
+	float: left;
+
+}
+.social2{
+	background: url(img/social-links.png);
+	background-position: -34px 0px;
+	height: 28px;
+	width: 28px;
+	float: left;
+	margin-left: 3px;
+}
+.social3{
+	background: url(img/social-links.png);
+	background-position: -67px 0px;
+	height: 28px;
+	width: 28px;
+	float: left;
+	margin-left: 3px;
+}
+.social4{
+	background: url(img/social-links.png);
+	background-position: -101px 0px;
+	height: 28px;
+	width: 28px;
+	float: left;
+	margin-left: 3px;
+}

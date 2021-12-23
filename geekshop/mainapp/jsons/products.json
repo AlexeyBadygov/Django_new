@@ -1,0 +1,48 @@
+[
+  {
+      "category": 1,
+      "name": "Лампа сфера",
+      "image": "products_images/product-1.jpg",
+      "short_desc": "123",
+      "description": "123",
+      "price": "123.00",
+      "quantity": 12
+  },
+  {
+
+      "category": 2,
+      "name": "Стул",
+      "image": "products_images/product-4.jpg",
+      "short_desc": "Стул",
+      "description": "Стул",
+      "price": "555.00",
+      "quantity": 24
+  },
+  {
+      "category": 3,
+      "name": "ДиванЭ",
+      "image": "products_images/product-3-sm.jpg",
+      "short_desc": "ДиваНЭ",
+      "description": "точь-в-точь ка на фото",
+      "price": "100000.00",
+      "quantity": 1
+  },
+  {
+      "category": 4,
+      "name": "2 стула",
+      "image": "products_images/product-2.jpg",
+      "short_desc": "стул+стул",
+      "description": "1+1",
+      "price": "24.12",
+      "quantity": 12
+  },
+  {
+      "category": 4,
+      "name": "Чайник",
+      "image": "products_images/product-3.jpg",
+      "short_desc": "Error 418",
+      "description": "418 I'm a teapot",
+      "price": "25000.00",
+      "quantity": 2
+  }
+]
