@@ -31,7 +31,7 @@ class ShopUserRegisterForm(UserCreationForm):
         data = self.cleaned_data['age']
         if data < 18:
             raise forms.ValidationError('Вы слишком молоды')
-        if len('age') > 2:
+        if len('age') > 3:
             raise forms.ValidationError("Проверьте введенный возраст")
         return data
 
