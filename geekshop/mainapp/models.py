@@ -18,6 +18,9 @@ class ProductCategory(models.Model):
         auto_now=True,
     )
 
+    is_active = models.BooleanField(
+        default=True,
+    )
     # models.DecimalField(max_digits=6, decimal_places=2)
     # models.IntegerField()
     # models.PositiveIntegerField()
@@ -57,6 +60,10 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(
         verbose_name='количество на складе',
         default=0,
+    )
+
+    is_active = models.BooleanField(
+        default=True,
     )
 
 
