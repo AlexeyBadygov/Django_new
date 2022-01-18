@@ -39,7 +39,7 @@
                         </tfoot>
                         <tbody>
                         {% for user in objects %}
-                            <tr {% if not user.is_active %} style="opacity: 0.5; text-decoration: underline;" {% endif %}>
+                            <tr {% if not user.is_active %} style="opacity: 0.5; text-decoration: line-through;" {% endif %}>
                                 <td><a href="{% url 'admin_staff:user_update' user.id %}" style="color: dodgerblue">{{ user.username }}</a></td>
                                 <td>{{ user.first_name }}</td>
                                 <td>{{ user.last_name }}</td>
