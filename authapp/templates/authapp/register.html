@@ -1,0 +1,12 @@
+{% extends 'authapp/base_reg.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="form-horizontal" action="{% url 'auth:register' %}" method="post">
+        <!-- Обязательное. Проверяет валидность сайта-->
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="зарегистрироваться">
+    </form>
+{% endblock %}
