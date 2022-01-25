@@ -10,8 +10,8 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    1. Import the includes() function: from django.urls import includes, path
+    2. Add a URL to urlpatterns:  path('blog/', includes('blog.urls'))
 """
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,7 @@ urlpatterns = [
     path('auth/', include('authapp.urls', namespace='auth')),
     path('basket/', include('basketapp.urls', namespace='basket')),
     path('', include('social_django.urls', namespace='social')),
+    path('orders/', include('ordersapp.urls', namespace='orders')),
 ]
 
 if settings.DEBUG:
