@@ -2,21 +2,22 @@
 {% load static %}
 
 {% block content %}
-    <div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <img src="{{ object.image.url }}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ object.name }}</h5>
-    <p class="card-text">{{ object.description }}</p>
+    <h5 class="card-title">Наименование:</br> {{ object.name }}</h5>
+    <p class="card-text">Описание:</br>{{ object.description }}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+<!--  потом добавим, при необходимости-->
+<!--  <ul class="list-group list-group-flush">-->
+<!--    <li class="list-group-item">An item</li>-->
+<!--    <li class="list-group-item">A second item</li>-->
+<!--    <li class="list-group-item">A third item</li>-->
+<!--  </ul>-->
+<!--  <div class="card-body">-->
+<!--    <a href="#" class="card-link">Card link</a>-->
+<!--    <a href="#" class="card-link">Another link</a>-->
+<!--  </div>-->
 </div>
 
 {% endblock %}

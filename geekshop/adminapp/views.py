@@ -19,6 +19,7 @@ class UsersListView(ListView):
     template_name = "adminapp/users.html"
     context_object_name = 'objects'
 
+
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
@@ -31,18 +32,24 @@ class UsersListView(ListView):
         context['title'] = 'админка/пользователи'
         return context
 
-# @user_passes_test(lambda u: u.is_superuser)
-# def users(request):
-#     title = 'админка/пользователи'
+
+# class UsersCreateView(CreateView):
+#     model = ShopUser
+#     template_name = "adminapp/users.html"
+#     # success_url = reverse_lazy('admin_staff:users')
+#     form_class = ShopUserRegisterForm
 #
-#     users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
-#
-#     context = {
-#         'title': title,
-#         'objects': users_list
-#     }
-#
-#     return render(request, 'adminapp/users.html', context)
+#     # @method_decorator(user_passes_test(lambda u: u.is_superuser))
+#     # def dispatch(self, *args, **kwargs):
+#     #     return super().dispatch(*args, **kwargs)
+#     #
+#     # def get_queryset(self):
+#     #     return ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
+#     #
+#     # def get_context_data(self, *, object_list=None, **kwargs):
+#     #     context = super(UsersCreateView, self).get_context_data(**kwargs)
+#     #     context['title'] = 'админка/пользователи'
+#     #     return context
 
 
 @user_passes_test(lambda u: u.is_superuser)
@@ -107,43 +114,30 @@ def user_delete(request, pk):
 
     return render(request, 'adminapp/user_delete.html', context)
 
+# class ProductView(ListView):
+#     model = ProductCategory
+#     template_name = 'adminapp/products.html'
+#     context_object_name = 'objects'
 
-@user_passes_test(lambda u: u.is_superuser)
-def categories(request):
-    title = 'админка/категории'
 
-    categories_list = ProductCategory.objects.all()
-
-    context = {
-        'title': title,
-        'objects': categories_list
-    }
-
-    return render(request, 'adminapp/categories.html', context)
+class ProductCategoryView(ListView):
+    model = ProductCategory
+    template_name = 'adminapp/categories.html'
+    context_object_name = 'objects'
 
 
 class ProductCategoryCreateView(CreateView):
     model = ProductCategory
     template_name = 'adminapp/category_update.html'
     success_url = reverse_lazy('admin_staff:categories')
-    # fields = '__all__'
     form_class = ProductCategoryEditForm
 
-
-# @user_passes_test(lambda u: u.is_superuser)
-# def category_create(request):
-#     pass
 
 class ProductCategoryUpdateView(UpdateView):
     model = ProductCategory
     template_name = 'adminapp/category_update.html'
     success_url = reverse_lazy('admin_staff:categories')
     fields = '__all__'
-
-
-@user_passes_test(lambda u: u.is_superuser)
-def category_update(request, pk):
-    pass
 
 
 class ProductCategoryDeleteView(DeleteView):
@@ -159,11 +153,6 @@ class ProductCategoryDeleteView(DeleteView):
         self.object.save()
 
         return HttpResponseRedirect(self.get_success_url())
-
-
-@user_passes_test(lambda u: u.is_superuser)
-def category_delete(request, pk):
-    pass
 
 
 @user_passes_test(lambda u: u.is_superuser)
@@ -210,19 +199,6 @@ class ProductDetailView(DetailView):
 
 
 @user_passes_test(lambda u: u.is_superuser)
-def product_read(request, pk):
-    title = 'продукт/подробнее'
-
-    product = get_object_or_404(Product, pk=pk)
-    context = {
-        'title': title,
-        'object': product,
-    }
-
-    return render(request, 'adminapp/product_read.html', context)
-
-
-@user_passes_test(lambda u: u.is_superuser)
 def product_update(request, pk):
     title = 'продукт/редактирование'
 
@@ -263,3 +239,18 @@ def product_delete(request, pk):
     }
 
     return render(request, 'adminapp/product_delete.html', context)
+
+
+class ProductDeleteView(DeleteView):
+    model = ProductCategory
+    template_name = 'adminapp/product_delete.html'
+    context_object_name = 'product_to_delete'
+    success_url = reverse_lazy('admin_staff:categories')
+
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.is_active = False
+        self.object.save()
+
+        return HttpResponseRedirect(self.get_success_url())
