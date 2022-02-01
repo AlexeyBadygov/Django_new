@@ -1,0 +1,11 @@
+{% if object.status == 'FM' %}
+<div class="container">
+    <button class="btn btn-info btn-round form-control my-2 last">
+       <a href="{% url 'orders:orders_list' %}">
+           к списку заказов
+       </a>
+    </button>
+    <button class="btn btn-light btn-round form-control  my-2 last">
+       <a href="{% url 'index' %}">на главную</a>
+    </button>
+</div>
