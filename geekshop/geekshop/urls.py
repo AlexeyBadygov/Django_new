@@ -29,7 +29,15 @@ urlpatterns = [
     path('admin_staff/', include('adminapp.urls', namespace='admin_staff')),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('basket/', include('basketapp.urls', namespace='basket')),
+    path('orders/', include('ordersapp.urls', namespace='orders')),
+
+    path('', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    if settings.DEBUG:
+        import debug_toolbar
+
+        urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
