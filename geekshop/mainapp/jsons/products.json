@@ -3,46 +3,46 @@
       "category": 1,
       "name": "Лампа сфера",
       "image": "products_images/product-1.jpg",
-      "short_desc": "123",
-      "description": "123",
-      "price": "123.00",
-      "quantity": 12
+      "short_desc": "Уникальный дизайн",
+      "description": "Супер сфера",
+      "price": "3500.00",
+      "quantity": 10
   },
   {
 
-      "category": 2,
-      "name": "Стул",
+      "category": 1,
+      "name": "Стул фамильный",
       "image": "products_images/product-4.jpg",
-      "short_desc": "Стул",
-      "description": "Стул",
-      "price": "555.00",
-      "quantity": 24
+      "short_desc": "Очень интересный стул",
+      "description": "",
+      "price": "4590.00",
+      "quantity": 2
   },
   {
       "category": 3,
-      "name": "ДиванЭ",
+      "name": "Классический диван",
       "image": "products_images/product-3-sm.jpg",
-      "short_desc": "ДиваНЭ",
-      "description": "точь-в-точь ка на фото",
-      "price": "100000.00",
-      "quantity": 1
+      "short_desc": "Уникальный дизайн",
+      "description": "ыва",
+      "price": "45000.00",
+      "quantity": 5
   },
   {
       "category": 4,
-      "name": "2 стула",
+      "name": "Стулья",
       "image": "products_images/product-2.jpg",
-      "short_desc": "стул+стул",
-      "description": "1+1",
-      "price": "24.12",
-      "quantity": 12
+      "short_desc": "Удобный стул для всех",
+      "description": "",
+      "price": "14500.00",
+      "quantity": 10
   },
   {
-      "category": 4,
+      "category": 3,
       "name": "Чайник",
       "image": "products_images/product-3.jpg",
-      "short_desc": "Error 418",
-      "description": "418 I'm a teapot",
-      "price": "25000.00",
-      "quantity": 2
+      "short_desc": "Уникальный дизайн",
+      "description": "",
+      "price": "1500.00",
+      "quantity": 10
   }
 ]
