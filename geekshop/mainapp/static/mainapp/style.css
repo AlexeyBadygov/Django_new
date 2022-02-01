@@ -82,3 +82,6 @@ html, body {
 	float: left;
 	margin-left: 3px;
 }
+.card-img{
+    width: 10%;
+}
